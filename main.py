@@ -18,7 +18,7 @@ def request_zip_file(settings):
 
 
 #   opens a csv file from a zip file buffer and
-#   returns the parsed data to a callback
+#   returns the parsed data as a 2d array
 def csv_from_zip_buffer(settings):
     data = []
     rows = request_zip_file(settings).split("\n")
