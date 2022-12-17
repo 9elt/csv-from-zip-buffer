@@ -25,8 +25,12 @@ class RequestZip:
             return res
 
         data = []
-        rows = res.split("\n")
-        for cols in rows: data.append(cols.split(self.delimiter))
+        try:
+            rows = res.split("\n")
+            for cols in rows: data.append(cols.split(self.delimiter))
+        except:
+            return RequestZipError(500, "failed parsing csv data")
+
         return data
 
     #   requests a zip file to a url and
